@@ -1,9 +1,10 @@
 ﻿using System;
-using System.Linq.Expressions;
 using System.ComponentModel;
+using System.Linq.Expressions;
+using System.Reactive.Disposables;
 using System.Reflection;
 
-namespace HelloWord
+namespace HelloWord.Extensions
 {
     public static class PropertyExtensions
     {
@@ -21,7 +22,7 @@ namespace HelloWord
 
             PropertyChangedEventHandler handler = (s, e) =>
             {
-                if (string.Equals(e.PropertyName, subscribedPropertyName, StringComparison.InvariantCulture))
+                if (string.Equals(e.PropertyName, subscribedPropertyName, StringComparison.OrdinalIgnoreCase))
                     onChanged();
             };
 
@@ -43,6 +44,7 @@ namespace HelloWord
 
             return propertyInfo.Name;
         }
+
     }
 }
 
