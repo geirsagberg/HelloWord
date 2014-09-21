@@ -37,7 +37,8 @@ namespace HelloWord.ViewModels
             }
         }
 
-        public MainViewModel(IDataService dataService, IUserDialogService userDialogService, IUserInteraction userInteraction)
+        public MainViewModel(IDataService dataService, IUserDialogService userDialogService,
+            IUserInteraction userInteraction)
         {
             this.dataService = dataService;
             this.userDialogService = userDialogService;
@@ -46,14 +47,14 @@ namespace HelloWord.ViewModels
 
         private async void FetchWords()
         {
-            int wordCount = 0;
-            while (wordCount == 0)
+            InputResponse response = await userInteraction.InputAsync("How many random words?", "e.g. 10");
+            if (!response.Ok)
+                return;
+            int wordCount;
+            if (!int.TryParse(response.Text, out wordCount))
             {
-                InputResponse response = await userInteraction.InputAsync("How many random words?", "e.g. 10");
-                if (!response.Ok)
-                    return;
-                if (!int.TryParse(response.Text, out wordCount))
-                    userDialogService.Toast("Please enter a number greater than 0");
+                userDialogService.Toast("Please enter a number greater than 0");
+                return;
             }
 
             using (userDialogService.Loading())
