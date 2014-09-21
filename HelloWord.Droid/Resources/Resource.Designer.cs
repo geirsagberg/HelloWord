@@ -218,11 +218,14 @@ namespace HelloWord.Droid
 			// aapt resource value: 0x7f050004
 			public const int loadingProgressWheel = 2131034116;
 			
+			// aapt resource value: 0x7f050006
+			public const int randomWords = 2131034118;
+			
 			// aapt resource value: 0x7f050002
 			public const int textViewStatus = 2131034114;
 			
 			// aapt resource value: 0x7f050005
-			public const int webView = 2131034117;
+			public const int webView1 = 2131034117;
 			
 			static Id()
 			{

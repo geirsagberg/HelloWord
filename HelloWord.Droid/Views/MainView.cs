@@ -13,13 +13,15 @@ namespace HelloWord.Droid.Views
     public class MainView : MvxActivity
     {
         private MvxPropertyChangedListener propertyListener;
+        private WebView webView;
 
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.MainView);
 
-
+            webView = FindViewById<WebView>(Resource.Id.webView1);
+            var obj = FindViewById(Resource.Id.webView1);
         }
 
         public MainViewModel MainViewModel { get { return ViewModel as MainViewModel; } }
@@ -28,7 +30,6 @@ namespace HelloWord.Droid.Views
         {
             base.OnViewModelSet();
 
-            WebView webView = FindViewById<WebView>(Resource.Id.webView);
             propertyListener = new MvxPropertyChangedListener(MainViewModel);
             propertyListener.Listen(() => MainViewModel.CatBytes, () =>
             {
