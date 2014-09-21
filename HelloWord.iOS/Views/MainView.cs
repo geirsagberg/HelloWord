@@ -26,9 +26,15 @@ namespace HelloWord.iOS.Views
             base.ViewDidLoad();
             EdgesForExtendedLayout = UIRectEdge.None;
 
+            var getCatButton = new UIBarButtonItem { Title = "Get cat" };
+            NavigationItem.LeftBarButtonItem = getCatButton;
+            var getWordsButton = new UIBarButtonItem { Title = "Get words" };
+            NavigationItem.RightBarButtonItem = getWordsButton;
+
             MvxFluentBindingDescriptionSet<MainView, MainViewModel> set = this.CreateBindingSet<MainView, MainViewModel>();
-            set.Bind(GetContentButton).To(vm => vm.FetchCatCommand);
             set.Bind(RandomWords).To(vm => vm.RandomWords);
+            set.Bind(getCatButton).To(vm => vm.FetchCatCommand);
+            set.Bind(getWordsButton).To(vm => vm.FetchWordsCommand);
             set.Apply();
 
             propertyListener = new MvxPropertyChangedListener(MainViewModel);
