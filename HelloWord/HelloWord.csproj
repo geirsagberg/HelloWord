@@ -35,10 +35,10 @@
     <Compile Include="JetBrains.Annotations\JetBrains.Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="App.cs" />
-    <Compile Include="Services\ICatService.cs" />
+    <Compile Include="Services\IDataService.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="Extensions\PropertyExtensions.cs" />
-    <Compile Include="Services\CatService.cs" />
+    <Compile Include="Services\DataService.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Fody.1.25.0\build\Fody.targets" Condition="Exists('..\packages\Fody.1.25.0\build\Fody.targets')" />

@@ -20,8 +20,7 @@ namespace HelloWord.Droid.Views
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.MainView);
 
-            webView = FindViewById<WebView>(Resource.Id.webView1);
-            var obj = FindViewById(Resource.Id.webView1);
+            webView = FindViewById<WebView>(Resource.Id.webView);
         }
 
         public MainViewModel MainViewModel { get { return ViewModel as MainViewModel; } }

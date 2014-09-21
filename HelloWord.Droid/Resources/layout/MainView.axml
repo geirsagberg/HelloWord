@@ -9,7 +9,7 @@
     <WebView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/webView1"
+        android:id="@+id/webView"
         android:layout_margin="10dp" />
     <TextView
         android:layout_width="match_parent"
@@ -21,5 +21,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         local:MvxBind="Click FetchCatCommand"
-        android:text="Get cats and words" />
+        android:text="Get cat" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        local:MvxBind="Click FetchWordsCommand"
+        android:text="Get random words" />
 </LinearLayout>

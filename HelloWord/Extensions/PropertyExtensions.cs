@@ -12,13 +12,13 @@ namespace HelloWord.Extensions
             this TSource source,
             Expression<Func<TSource, TProp>> propertySelector,
             Action onChanged)
-            where TSource : INotifyPropertyChanged
+            where TSource : class, INotifyPropertyChanged
         {
             if (source == null) throw new ArgumentNullException("source");
             if (propertySelector == null) throw new ArgumentNullException("propertySelector");
             if (onChanged == null) throw new ArgumentNullException("onChanged");
 
-            var subscribedPropertyName = GetPropertyName(propertySelector);
+            string subscribedPropertyName = GetPropertyName(propertySelector);
 
             PropertyChangedEventHandler handler = (s, e) =>
             {
@@ -39,12 +39,10 @@ namespace HelloWord.Extensions
 
             var propertyInfo = memberExpr.Member as PropertyInfo;
 
-            if (propertyInfo == null || propertyInfo.DeclaringType != typeof(TSource))
+            if (propertyInfo == null || propertyInfo.DeclaringType != typeof (TSource))
                 throw new ArgumentException("must yield a single property on the given object", "propertySelector");
 
             return propertyInfo.Name;
         }
-
     }
 }
-

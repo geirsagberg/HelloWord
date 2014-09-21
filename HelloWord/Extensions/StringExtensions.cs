@@ -12,7 +12,6 @@ namespace HelloWord.Extensions
             return string.Format(str, args);
         }
 
-
         public static string ToJoinedString<T>(this IEnumerable<T> enumerable, string separator)
         {
             return string.Join(separator, enumerable.Select(e => e.ToString()));

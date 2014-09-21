@@ -1,4 +1,3 @@
-using System.Threading.Tasks;
 using System.Windows.Input;
 using Acr.MvvmCross.Plugins.UserDialogs;
 using Chance.MvvmCross.Plugins.UserInteraction;
@@ -7,56 +6,56 @@ using HelloWord.Services;
 
 namespace HelloWord.ViewModels
 {
-    public class MainViewModel
-        : MvxViewModel
+    public class MainViewModel : MvxViewModel
     {
-        public string CatUrl {
-            get;
-            set;
-        }
-
-        private readonly ICatService catService;
+        private readonly IDataService dataService;
         private readonly IUserDialogService userDialogService;
         private readonly IUserInteraction userInteraction;
+        public string CatUrl { get; set; }
 
         public ICommand FetchCatCommand
         {
-            get { return new AsyncCommand(FetchCat); }
+            get { return new MvxCommand(FetchCat); }
+        }
+
+        public ICommand FetchWordsCommand
+        {
+            get { return new MvxCommand(FetchWords); }
         }
 
         public byte[] CatBytes { get; set; }
         public string RandomWords { get; set; }
 
-        public MainViewModel(ICatService catService, IUserDialogService userDialogService, IUserInteraction userInteraction)
+        public MainViewModel(IDataService dataService, IUserDialogService userDialogService, IUserInteraction userInteraction)
         {
-            this.catService = catService;
+            this.dataService = dataService;
             this.userDialogService = userDialogService;
             this.userInteraction = userInteraction;
         }
 
-        private async Task FetchCat()
+        private async void FetchWords()
+        {
+            int wordCount = 0;
+            while (wordCount == 0)
+            {
+                InputResponse response = await userInteraction.InputAsync("How many random words?", "e.g. 10");
+                if (!response.Ok)
+                    return;
+                if (!int.TryParse(response.Text, out wordCount))
+                    userDialogService.Toast("Please enter a number greater than 0");
+            }
+
+            using (userDialogService.Loading())
+            {
+                RandomWords = await dataService.GetRandomWords(wordCount);
+            }
+        }
+
+        private async void FetchCat()
         {
             using (userDialogService.Loading())
             {
-                // Start downloading cat while prompting for wordcount
-                Task<byte[]> catTask = catService.GetCat();
-//                Task<string> catTask = catService.GetCatUrl();
-
-
-                int wordCount = 0;
-                while (wordCount == 0)
-                {
-                    InputResponse response = await userInteraction.InputAsync("How many random words?", "e.g. 10");
-                    if (!response.Ok)
-                        return;
-                    if (!int.TryParse(response.Text, out wordCount))
-                        userDialogService.Toast("Please enter a number greater than 0");
-                }
-
-                Task<string> wordTask = catService.GetRandomWords(wordCount);
-                await Task.WhenAll(catTask, wordTask);
-                CatBytes = catTask.Result;
-                RandomWords = wordTask.Result;
+                CatBytes = await dataService.GetCat();
             }
         }
     }

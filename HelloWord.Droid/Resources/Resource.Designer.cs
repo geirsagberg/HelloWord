@@ -225,7 +225,7 @@ namespace HelloWord.Droid
 			public const int textViewStatus = 2131034114;
 			
 			// aapt resource value: 0x7f050005
-			public const int webView1 = 2131034117;
+			public const int webView = 2131034117;
 			
 			static Id()
 			{
