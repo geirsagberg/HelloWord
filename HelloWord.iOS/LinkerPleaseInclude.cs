@@ -2,6 +2,7 @@ using System;
 using System.Collections.Specialized;
 using System.Windows.Input;
 using MonoTouch.UIKit;
+using Cirrious.CrossCore;
 
 namespace HelloWord.iOS
 {
@@ -69,7 +70,7 @@ namespace HelloWord.iOS
 
         public void Include(INotifyCollectionChanged changed)
         {
-            changed.CollectionChanged += (s,e) => { var test = string.Format("{0}{1}{2}{3}{4}", e.Action,e.NewItems, e.NewStartingIndex, e.OldItems, e.OldStartingIndex); } ;
+            changed.CollectionChanged += (s,e) => { Mvx.Trace(string.Format("{0}{1}{2}{3}{4}", e.Action,e.NewItems, e.NewStartingIndex, e.OldItems, e.OldStartingIndex)); } ;
         }
 		
         public void Include(ICommand command)
@@ -85,7 +86,7 @@ namespace HelloWord.iOS
 		public void Include(System.ComponentModel.INotifyPropertyChanged changed)
 		{
 			changed.PropertyChanged += (sender, e) =>  {
-				var test = e.PropertyName;
+                Mvx.Trace(e.PropertyName);
 			};
 		}
 	}

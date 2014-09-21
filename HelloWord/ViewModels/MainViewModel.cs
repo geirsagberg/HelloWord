@@ -10,6 +10,11 @@ namespace HelloWord.ViewModels
     public class MainViewModel
         : MvxViewModel
     {
+        public string CatUrl {
+            get;
+            set;
+        }
+
         private readonly ICatService catService;
         private readonly IUserDialogService userDialogService;
         private readonly IUserInteraction userInteraction;
@@ -31,10 +36,12 @@ namespace HelloWord.ViewModels
 
         private async Task FetchCat()
         {
-            using (userDialogService.Progress())
+            using (userDialogService.Loading())
             {
                 // Start downloading cat while prompting for wordcount
                 Task<byte[]> catTask = catService.GetCat();
+//                Task<string> catTask = catService.GetCatUrl();
+
 
                 int wordCount = 0;
                 while (wordCount == 0)

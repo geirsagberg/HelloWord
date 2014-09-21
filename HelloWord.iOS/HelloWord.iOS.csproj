@@ -3,8 +3,6 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{59437187-C29D-4DF1-8179-9781369F075C}</ProjectGuid>
     <ProjectTypeGuids>{6BC8ED88-2882-458C-8E55-DFD12B67127B};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Exe</OutputType>
@@ -137,7 +135,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HelloWord\HelloWord.csproj">
-      <Project>{33c7108f-e804-43ae-8c53-4cb0a3a6f254}</Project>
+      <Project>{33C7108F-E804-43AE-8C53-4CB0A3A6F254}</Project>
       <Name>HelloWord</Name>
     </ProjectReference>
   </ItemGroup>
