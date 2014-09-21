@@ -13,12 +13,6 @@ namespace HelloWord.iOS.Views
 	partial class MainView
 	{
 		[Outlet]
-		MonoTouch.UIKit.UIImageView CatImage { get; set; }
-
-		[Outlet]
-		MonoTouch.UIKit.UIButton GetContentButton { get; set; }
-
-		[Outlet]
 		MonoTouch.UIKit.UILabel RandomWords { get; set; }
 
 		[Outlet]
@@ -26,24 +20,14 @@ namespace HelloWord.iOS.Views
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (WebView != null) {
-				WebView.Dispose ();
-				WebView = null;
-			}
-
-			if (CatImage != null) {
-				CatImage.Dispose ();
-				CatImage = null;
-			}
-
-			if (GetContentButton != null) {
-				GetContentButton.Dispose ();
-				GetContentButton = null;
-			}
-
 			if (RandomWords != null) {
 				RandomWords.Dispose ();
 				RandomWords = null;
+			}
+
+			if (WebView != null) {
+				WebView.Dispose ();
+				WebView = null;
 			}
 		}
 	}

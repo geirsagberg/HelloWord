@@ -24,7 +24,6 @@ namespace HelloWord.iOS.Views
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-
             EdgesForExtendedLayout = UIRectEdge.None;
 
             MvxFluentBindingDescriptionSet<MainView, MainViewModel> set = this.CreateBindingSet<MainView, MainViewModel>();
