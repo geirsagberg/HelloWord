@@ -34,7 +34,7 @@ namespace HelloWord.iOS.Views
             set.Apply();
 
             propertyListener = new MvxPropertyChangedListener(MainViewModel);
-            propertyListener.Listen(() => MainViewModel.CatBytes, (s, e) => {
+            propertyListener.Listen(() => MainViewModel.CatBytes, () => {
                 using (var data = NSData.FromArray(MainViewModel.CatBytes)){
 //                    CatImage.Image = UIImage.LoadFromData(data);
 
