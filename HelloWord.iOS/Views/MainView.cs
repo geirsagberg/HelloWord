@@ -42,7 +42,7 @@ namespace HelloWord.iOS.Views
             {
                 using (NSData data = NSData.FromArray(MainViewModel.CatBytes))
                 {
-                    WebView.LoadData(data, "image/gif", "UTF-8", new NSUrl("http://edgecats.net"));
+                    WebView.LoadData(data, "image/gif", "utf-8", new NSUrl("http://edgecats.net"));
                 }
             });
         }
