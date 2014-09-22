@@ -91,12 +91,6 @@
     <BundleResource Include="Resources\Default-568h%402x.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AppDelegate.cs.txt">
-      <DependentUpon>AppDelegate.cs</DependentUpon>
-    </Content>
-    <Content Include="ToDo-MvvmCross\_ Touch UI.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <Reference Include="Acr.MvvmCross.Plugins.UserDialogs">
       <HintPath>..\packages\Acr.MvvmCross.Plugins.UserDialogs.2.0.1\lib\MonoTouch\Acr.MvvmCross.Plugins.UserDialogs.dll</HintPath>
     </Reference>
@@ -144,9 +138,7 @@
       <Name>HelloWord</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
   <ItemGroup>
     <InterfaceDefinition Include="Views\MainView.xib" />
