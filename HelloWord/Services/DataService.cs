@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
-using HelloWord.Extensions;
 using Newtonsoft.Json.Linq;
 
 namespace HelloWord.Services
@@ -26,12 +25,11 @@ namespace HelloWord.Services
 
         public async Task<string> GetRandomWords(int wordCount)
         {
-            string url = "http://api.wordnik.com/v4/words.json/randomWords?limit={0}&api_key={1}"
-                .FormatWith(wordCount, WordnikApiKey);
+            string url = string.Format("http://api.wordnik.com/v4/words.json/randomWords?limit={0}&api_key={1}", wordCount, WordnikApiKey);
             string wordsJson = await httpClient.GetStringAsync(url);
             JArray wordArray = JArray.Parse(wordsJson);
             IEnumerable<JToken> words = wordArray.Select(w => w["word"]);
-            return words.ToJoinedString(" ");
+            return string.Join(" ", words);
         }
 
         private int GetRandomNumber()

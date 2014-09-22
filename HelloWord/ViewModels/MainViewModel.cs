@@ -3,7 +3,6 @@ using System.Windows.Input;
 using Acr.MvvmCross.Plugins.UserDialogs;
 using Chance.MvvmCross.Plugins.UserInteraction;
 using Cirrious.MvvmCross.ViewModels;
-using HelloWord.Extensions;
 using HelloWord.Services;
 
 namespace HelloWord.ViewModels
@@ -33,7 +32,7 @@ namespace HelloWord.ViewModels
             get
             {
                 string base64Image = Convert.ToBase64String(CatBytes);
-                return "<img style='width: 100%' src='data:image/gif;base64,{0}' />".FormatWith(base64Image);
+                return string.Format("<img style='width: 100%' src='data:image/gif;base64,{0}' />", base64Image);
             }
         }
 
