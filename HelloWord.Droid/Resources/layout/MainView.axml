@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        local:MvxBind="Click FetchCatCommand"
+        android:text="Get cat" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        local:MvxBind="Click FetchWordsCommand"
+        android:text="Get random words" />
+    <WebView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/webView"
+        android:layout_margin="10dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        local:MvxBind="Text RandomWords" />
+</LinearLayout>
