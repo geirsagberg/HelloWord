@@ -26,8 +26,8 @@ namespace HelloWord.Services
 
         public async Task<string> GetRandomWords(int wordCount)
         {
-            string url = "http://api.wordnik.com/v4/words.json/randomWords?limit={0}&api_key={1}".FormatWith(wordCount,
-                WordnikApiKey);
+            string url = "http://api.wordnik.com/v4/words.json/randomWords?limit={0}&api_key={1}"
+                .FormatWith(wordCount, WordnikApiKey);
             string wordsJson = await httpClient.GetStringAsync(url);
             JArray wordArray = JArray.Parse(wordsJson);
             IEnumerable<JToken> words = wordArray.Select(w => w["word"]);
