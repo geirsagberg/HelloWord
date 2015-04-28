@@ -107,6 +107,9 @@ namespace HelloWord.Droid
 		public partial class Attribute
 		{
 			
+			// aapt resource value: 0x7f010011
+			public const int GroupItemTemplate = 2130771985;
+			
 			// aapt resource value: 0x7f01000c
 			public const int MvxBind = 2130771980;
 			
@@ -119,8 +122,8 @@ namespace HelloWord.Droid
 			// aapt resource value: 0x7f01000d
 			public const int MvxLang = 2130771981;
 			
-			// aapt resource value: 0x7f010011
-			public const int MvxSource = 2130771985;
+			// aapt resource value: 0x7f010012
+			public const int MvxSource = 2130771986;
 			
 			// aapt resource value: 0x7f01000e
 			public const int MvxTemplate = 2130771982;
@@ -318,8 +321,14 @@ namespace HelloWord.Droid
 			// aapt resource value: 0
 			public const int MvxControl_MvxTemplate = 0;
 			
-			public static int[] MvxImageView = new int[] {
+			public static int[] MvxExpandableListView = new int[] {
 					2130771985};
+			
+			// aapt resource value: 0
+			public const int MvxExpandableListView_GroupItemTemplate = 0;
+			
+			public static int[] MvxImageView = new int[] {
+					2130771986};
 			
 			// aapt resource value: 0
 			public const int MvxImageView_MvxSource = 0;
