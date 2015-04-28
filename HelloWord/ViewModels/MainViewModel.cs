@@ -1,7 +1,6 @@
 using System;
 using System.Windows.Input;
 using Acr.MvvmCross.Plugins.UserDialogs;
-using Chance.MvvmCross.Plugins.UserInteraction;
 using Cirrious.MvvmCross.ViewModels;
 using HelloWord.Extensions;
 using HelloWord.Services;
@@ -12,7 +11,6 @@ namespace HelloWord.ViewModels
     {
         private readonly IDataService dataService;
         private readonly IUserDialogService userDialogService;
-        private readonly IUserInteraction userInteraction;
         public string CatUrl { get; set; }
 
         public ICommand FetchCatCommand
@@ -32,41 +30,36 @@ namespace HelloWord.ViewModels
         {
             get
             {
-                string base64Image = Convert.ToBase64String(CatBytes);
+                var base64Image = Convert.ToBase64String(CatBytes);
                 return "<img style='width: 100%' src='data:image/gif;base64,{0}' />".FormatWith(base64Image);
             }
         }
 
-        public MainViewModel(IDataService dataService, IUserDialogService userDialogService,
-            IUserInteraction userInteraction)
+        public MainViewModel(IDataService dataService, IUserDialogService userDialogService)
         {
             this.dataService = dataService;
             this.userDialogService = userDialogService;
-            this.userInteraction = userInteraction;
         }
 
         private async void FetchWords()
         {
-            InputResponse response = await userInteraction.InputAsync("How many random words?", "e.g. 10");
+            var response = await userDialogService.PromptAsync("How many random words?", placeholder: "e.g. 10");
             if (!response.Ok)
                 return;
             int wordCount;
-            if (!int.TryParse(response.Text, out wordCount))
-            {
+            if (!int.TryParse(response.Text, out wordCount)) {
                 userDialogService.Toast("Please enter a number greater than 0");
                 return;
             }
 
-            using (userDialogService.Loading())
-            {
+            using (userDialogService.Loading()) {
                 RandomWords = await dataService.GetRandomWords(wordCount);
             }
         }
 
         private async void FetchCat()
         {
-            using (userDialogService.Loading())
-            {
+            using (userDialogService.Loading()) {
                 CatBytes = await dataService.GetCat();
             }
         }

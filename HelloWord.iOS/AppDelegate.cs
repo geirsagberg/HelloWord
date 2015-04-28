@@ -1,7 +1,6 @@
 ﻿using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using Cirrious.CrossCore;
-using Cirrious.MvvmCross.Touch.Platform;
 using Cirrious.MvvmCross.ViewModels;
 
 namespace HelloWord.iOS
