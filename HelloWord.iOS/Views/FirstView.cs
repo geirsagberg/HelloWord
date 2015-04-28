@@ -27,8 +27,6 @@ namespace HelloWord.iOS.Views
             Add(textField);
 
             var set = this.CreateBindingSet<FirstView, Core.ViewModels.FirstViewModel>();
-            set.Bind(label).To(vm => vm.Hello);
-            set.Bind(textField).To(vm => vm.Hello);
             set.Apply();
         }
     }
