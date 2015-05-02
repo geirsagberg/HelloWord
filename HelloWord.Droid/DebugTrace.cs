@@ -18,12 +18,9 @@ namespace HelloWord.Droid
 
         public void Trace(MvxTraceLevel level, string tag, string message, params object[] args)
         {
-            try
-            {
-                Debug.WriteLine(string.Format(tag + ":" + level + ":" + message, args));
-            }
-            catch (FormatException)
-            {
+            try {
+                Debug.WriteLine(tag + ":" + level + ":" + message, args);
+            } catch (FormatException) {
                 Trace(MvxTraceLevel.Error, tag, "Exception during trace of {0} {1}", level, message);
             }
         }

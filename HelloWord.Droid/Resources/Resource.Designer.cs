@@ -107,62 +107,62 @@ namespace HelloWord.Droid
 		public partial class Attribute
 		{
 			
-			// aapt resource value: 0x7f010011
-			public const int GroupItemTemplate = 2130771985;
-			
-			// aapt resource value: 0x7f01000c
-			public const int MvxBind = 2130771980;
-			
-			// aapt resource value: 0x7f010010
-			public const int MvxDropDownItemTemplate = 2130771984;
-			
-			// aapt resource value: 0x7f01000f
-			public const int MvxItemTemplate = 2130771983;
-			
-			// aapt resource value: 0x7f01000d
-			public const int MvxLang = 2130771981;
-			
-			// aapt resource value: 0x7f010012
-			public const int MvxSource = 2130771986;
-			
-			// aapt resource value: 0x7f01000e
-			public const int MvxTemplate = 2130771982;
-			
-			// aapt resource value: 0x7f010003
-			public const int ahBarColor = 2130771971;
-			
-			// aapt resource value: 0x7f01000b
-			public const int ahBarLength = 2130771979;
-			
-			// aapt resource value: 0x7f01000a
-			public const int ahBarWidth = 2130771978;
-			
-			// aapt resource value: 0x7f010008
-			public const int ahCircleColor = 2130771976;
-			
-			// aapt resource value: 0x7f010007
-			public const int ahDelayMillis = 2130771975;
-			
-			// aapt resource value: 0x7f010009
-			public const int ahRadius = 2130771977;
-			
-			// aapt resource value: 0x7f010004
-			public const int ahRimColor = 2130771972;
-			
 			// aapt resource value: 0x7f010005
-			public const int ahRimWidth = 2130771973;
-			
-			// aapt resource value: 0x7f010006
-			public const int ahSpinSpeed = 2130771974;
+			public const int GroupItemTemplate = 2130771973;
 			
 			// aapt resource value: 0x7f010000
-			public const int ahText = 2130771968;
+			public const int MvxBind = 2130771968;
+			
+			// aapt resource value: 0x7f010004
+			public const int MvxDropDownItemTemplate = 2130771972;
+			
+			// aapt resource value: 0x7f010003
+			public const int MvxItemTemplate = 2130771971;
 			
 			// aapt resource value: 0x7f010001
-			public const int ahTextColor = 2130771969;
+			public const int MvxLang = 2130771969;
+			
+			// aapt resource value: 0x7f010006
+			public const int MvxSource = 2130771974;
 			
 			// aapt resource value: 0x7f010002
-			public const int ahTextSize = 2130771970;
+			public const int MvxTemplate = 2130771970;
+			
+			// aapt resource value: 0x7f01000a
+			public const int ahBarColor = 2130771978;
+			
+			// aapt resource value: 0x7f010012
+			public const int ahBarLength = 2130771986;
+			
+			// aapt resource value: 0x7f010011
+			public const int ahBarWidth = 2130771985;
+			
+			// aapt resource value: 0x7f01000f
+			public const int ahCircleColor = 2130771983;
+			
+			// aapt resource value: 0x7f01000e
+			public const int ahDelayMillis = 2130771982;
+			
+			// aapt resource value: 0x7f010010
+			public const int ahRadius = 2130771984;
+			
+			// aapt resource value: 0x7f01000b
+			public const int ahRimColor = 2130771979;
+			
+			// aapt resource value: 0x7f01000c
+			public const int ahRimWidth = 2130771980;
+			
+			// aapt resource value: 0x7f01000d
+			public const int ahSpinSpeed = 2130771981;
+			
+			// aapt resource value: 0x7f010007
+			public const int ahText = 2130771975;
+			
+			// aapt resource value: 0x7f010008
+			public const int ahTextColor = 2130771976;
+			
+			// aapt resource value: 0x7f010009
+			public const int ahTextSize = 2130771977;
 			
 			static Attribute()
 			{
@@ -208,23 +208,23 @@ namespace HelloWord.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f050000
-			public const int MvxBindingTagUnique = 2131034112;
+			// aapt resource value: 0x7f040000
+			public const int MvxBindingTagUnique = 2130968576;
 			
-			// aapt resource value: 0x7f050004
-			public const int loadingImage = 2131034116;
+			// aapt resource value: 0x7f040004
+			public const int loadingImage = 2130968580;
 			
-			// aapt resource value: 0x7f050002
-			public const int loadingProgressBar = 2131034114;
+			// aapt resource value: 0x7f040002
+			public const int loadingProgressBar = 2130968578;
 			
-			// aapt resource value: 0x7f050005
-			public const int loadingProgressWheel = 2131034117;
+			// aapt resource value: 0x7f040005
+			public const int loadingProgressWheel = 2130968581;
 			
-			// aapt resource value: 0x7f050003
-			public const int textViewStatus = 2131034115;
+			// aapt resource value: 0x7f040003
+			public const int textViewStatus = 2130968579;
 			
-			// aapt resource value: 0x7f050001
-			public const int webView = 2131034113;
+			// aapt resource value: 0x7f040001
+			public const int webView = 2130968577;
 			
 			static Id()
 			{
@@ -267,14 +267,14 @@ namespace HelloWord.Droid
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f040002
-			public const int ApplicationName = 2130968578;
+			// aapt resource value: 0x7f060001
+			public const int ApplicationName = 2131099649;
 			
-			// aapt resource value: 0x7f040001
-			public const int Hello = 2130968577;
+			// aapt resource value: 0x7f060000
+			public const int Hello = 2131099648;
 			
-			// aapt resource value: 0x7f040000
-			public const int library_name = 2130968576;
+			// aapt resource value: 0x7f060002
+			public const int library_name = 2131099650;
 			
 			static String()
 			{
@@ -289,8 +289,8 @@ namespace HelloWord.Droid
 		public partial class Style
 		{
 			
-			// aapt resource value: 0x7f060000
-			public const int Theme_Splash = 2131099648;
+			// aapt resource value: 0x7f050000
+			public const int Theme_Splash = 2131034112;
 			
 			static Style()
 			{
@@ -306,8 +306,8 @@ namespace HelloWord.Droid
 		{
 			
 			public static int[] MvxBinding = new int[] {
-					2130771980,
-					2130771981};
+					2130771968,
+					2130771969};
 			
 			// aapt resource value: 0
 			public const int MvxBinding_MvxBind = 0;
@@ -316,26 +316,26 @@ namespace HelloWord.Droid
 			public const int MvxBinding_MvxLang = 1;
 			
 			public static int[] MvxControl = new int[] {
-					2130771982};
+					2130771970};
 			
 			// aapt resource value: 0
 			public const int MvxControl_MvxTemplate = 0;
 			
 			public static int[] MvxExpandableListView = new int[] {
-					2130771985};
+					2130771973};
 			
 			// aapt resource value: 0
 			public const int MvxExpandableListView_GroupItemTemplate = 0;
 			
 			public static int[] MvxImageView = new int[] {
-					2130771986};
+					2130771974};
 			
 			// aapt resource value: 0
 			public const int MvxImageView_MvxSource = 0;
 			
 			public static int[] MvxListView = new int[] {
-					2130771983,
-					2130771984};
+					2130771971,
+					2130771972};
 			
 			// aapt resource value: 1
 			public const int MvxListView_MvxDropDownItemTemplate = 1;
@@ -344,18 +344,18 @@ namespace HelloWord.Droid
 			public const int MvxListView_MvxItemTemplate = 0;
 			
 			public static int[] ProgressWheel = new int[] {
-					2130771968,
-					2130771969,
-					2130771970,
-					2130771971,
-					2130771972,
-					2130771973,
-					2130771974,
 					2130771975,
 					2130771976,
 					2130771977,
 					2130771978,
-					2130771979};
+					2130771979,
+					2130771980,
+					2130771981,
+					2130771982,
+					2130771983,
+					2130771984,
+					2130771985,
+					2130771986};
 			
 			// aapt resource value: 3
 			public const int ProgressWheel_ahBarColor = 3;
